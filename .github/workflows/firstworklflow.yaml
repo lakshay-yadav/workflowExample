@@ -12,3 +12,10 @@ jobs:
         run: |
           npm -v
           node -v
+  Another-command:
+    runs-on: windows-latest
+    steps:
+      - name: NPM version version
+        run: npm -v
+    
+    
