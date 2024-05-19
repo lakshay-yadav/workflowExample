@@ -12,11 +12,17 @@ jobs:
         run: |
           npm -v
           node -v
-          
+
   Another-command:
     runs-on: windows-latest
     steps:
       - name: NPM version version
         run: npm -v
-    
+  
+  Third-Job:
+    runs-on: ubuntu-latest
+    needs: Running-shell-commands
+    steps:
+      - name: Echo a string
+        run: echo "Third job"
     
