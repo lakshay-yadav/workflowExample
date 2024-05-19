@@ -25,4 +25,3 @@ jobs:
     steps:
       - name: Echo a string
         run: echo "Third job"
-    
