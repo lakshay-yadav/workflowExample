@@ -1,0 +1,14 @@
+name: Firts workflow
+
+on: [push]
+
+jobs:
+  Running-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello world"
+      - name: Running multiline commands
+        run: |
+          npm -v
+          node -v
