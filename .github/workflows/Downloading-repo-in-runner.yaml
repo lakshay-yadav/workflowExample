@@ -3,16 +3,25 @@ name: Downloading repo in runner machine
 on: [push]
 
 jobs:
-    Checkout:
-        runs-on: ubuntu-latest
-        steps:
-          - name: List files before
-            run: ls -a
-          - name: Checkout
-            run: |
-              git init
-              git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git
-              git fetch orign
-              git checkout main
-          - name: List files after
-            run: ls -a
+  Checkout-with-action:
+    runs-on: ubuntu-latest
+    steps:
+        - name: List files before
+          run: ls -a
+        - name: checking-out
+          uses: actions/checkout@v4
+        - name: List files after
+          run: ls -a
+    # Checkout:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #       - name: List files before
+    #         run: ls -a
+    #       - name: Checkout
+    #         run: |
+    #           git init
+    #           git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git
+    #           git fetch orign
+    #           git checkout main
+    #       - name: List files after
+    #         run: ls -a
