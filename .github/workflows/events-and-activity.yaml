@@ -1,0 +1,17 @@
+name: Events and Activity
+
+on:
+  push:
+  pull_request: 
+    types: [opened,assigned]
+  issues:
+    types: [opened]
+
+jobs:
+    Events:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Echo repo and commit id
+            run: |
+              echo $GITHUB_SHA
+              echo $GITHUB_REF
