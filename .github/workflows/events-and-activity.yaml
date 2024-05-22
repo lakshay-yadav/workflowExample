@@ -2,6 +2,7 @@ name: Events and Activity
 
 on:
   push:
+    #This will only run when all the conditions from branches,tags,path are matched.
     branches: 
       - main
       - "feature/*"
@@ -9,15 +10,15 @@ on:
     # Cannot use both in the same workflow
     # branches-ignore: 
     #   - develop
-    tags:
-      - v1.*
-      - "!tag-name" #To ignore the tag
+    # tags:
+    #   - v1.*
+    #   - "!tag-name" #To ignore the tag
     # Cannot use both in the same workflow
     # tags-ignore: 
     #   - tag-name
-    paths:
-      - "**.js"
-      - "!path"
+    # paths:
+    #   - "**.js"
+    #   - "!path"
     # Cannot use both in the same workflow
     # paths-ignore: 
     #   - path
