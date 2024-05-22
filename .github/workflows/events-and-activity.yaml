@@ -2,6 +2,26 @@ name: Events and Activity
 
 on:
   push:
+    branches: 
+      - main
+      - "feature/*"
+      - "!branch-name" #To ignore the branch. This should in the last.
+    # Cannot use both in the same workflow
+    # branches-ignore: 
+    #   - develop
+    tags:
+      - v1.*
+      - "!tag-name" #To ignore the tag
+    # Cannot use both in the same workflow
+    # tags-ignore: 
+    #   - tag-name
+    paths:
+      - "**.js"
+      - "!path"
+    # Cannot use both in the same workflow
+    # paths-ignore: 
+    #   - path
+
   pull_request: 
     types: [opened,assigned]
   issues:
