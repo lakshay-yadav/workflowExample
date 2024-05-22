@@ -3,12 +3,32 @@ name: Manually Triggered
 on:
   workflow_dispatch:
     inputs:
-      input_name:
-        description: This is input example
+      string_input:
+        description: This is String
         type: string
         default: "Default value"
         required: true
-
+      number_input:
+        description: This is number
+        type: number
+        default: 3
+      option:
+        description: Choose from the option
+        required: true
+        default: option 3
+        type: choice
+        options:
+          - option 1
+          - option 2
+          - option 3
+      boolean:
+        description: Boolean Input
+        type: boolean
+        default: true
+      environment:
+        description: Environment
+        type: environment
+        required: true
 jobs:
   log-info:
     runs-on: ubuntu-latest
