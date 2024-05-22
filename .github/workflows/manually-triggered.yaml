@@ -1,7 +1,13 @@
 name: Manually Triggered
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      input_name:
+        description: This is input example
+        type: string
+        default: "Default value"
+        required: true
 
 jobs:
   log-info:
