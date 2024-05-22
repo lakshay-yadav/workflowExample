@@ -1,0 +1,13 @@
+name: Workflow Run
+
+on: 
+  workflow_run: 
+    workflows: [Events and Activity]
+    types: [completed]
+
+jobs:
+  echo-string:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo string
+        run: echo "Events and Activity workflow is done"
