@@ -25,7 +25,7 @@ jobs:
           DELIMETER = 1234
           echo "RANDOM_JOKE<<$DELIMETER" >> "$GITHUB_ENV"
           echo "Here is the joke: " >> "$GITHUB_ENV"
-          echo "https://icanhazdadjoke.com/" >> "$GITHUB_ENV"
+          curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
           echo "" >> "$GITHUB_ENV"
           echo "$DELIMETER" >>"$GITHUB_ENV"
 
@@ -40,3 +40,4 @@ jobs:
           echo $JOB_LEVEL_ENV
           echo $RANDOM_NUMBER
           echo $TODAY_DATE
+          echo $RANDOM_JOKE
