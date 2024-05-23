@@ -8,3 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello there"
+
+
+# Rest API to trigger external event
+# https://api.github.com/repos/lakshay-yadav/workflowExample/dispatches
+
+# We have to give event_type also in the API call and if the event_type matches with the type specified in the workflow 
+# then it will trigger the workflow if type in not specified in the workflow then it will run for any event_type
+
+# We can also pass input in the API call and those can be accessible by using github.event.variable_name
