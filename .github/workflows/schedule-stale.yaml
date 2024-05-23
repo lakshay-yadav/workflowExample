@@ -1,0 +1,17 @@
+name: Schedule Stale
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hi there!"
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: "This is stale message" 
+          days-before-stale: 1
+          days-before-close: 5
