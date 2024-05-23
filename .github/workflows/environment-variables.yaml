@@ -20,6 +20,15 @@ jobs:
         run: |
           echo "RANDOM_NUMBER=$RANDOM" >> "$GITHUB_ENV"
           echo "TODAY_DATE=$(date)" >>"$GITHUB_ENV"
+      - name: Adding multiline env var
+        run: |
+          DELIMETER = 1234
+          echo "RANDOM_JOKE<<$DELIMETER" >> "$GITHUB_ENV"
+          echo "Here is the joke: " >> "$GITHUB_ENV"
+          echo "https://icanhazdadjoke.com/" >> "$GITHUB_ENV"
+          echo "" >> "$GITHUB_ENV"
+          echo "$DELIMETER" >>"$GITHUB_ENV"
+
       - name: Log custom ENV vars
         env:
           STEP_LEVEL_VAR: Available to step
