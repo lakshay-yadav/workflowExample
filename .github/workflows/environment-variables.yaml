@@ -22,7 +22,7 @@ jobs:
           echo "TODAY_DATE=$(date)" >>"$GITHUB_ENV"
       - name: Adding multiline env var
         run: |
-          DELIMETER = 1234
+          DELIMETER=1234
           echo "RANDOM_JOKE<<$DELIMETER" >> "$GITHUB_ENV"
           echo "Here is the joke: " >> "$GITHUB_ENV"
           curl -s  https://official-joke-api.appspot.com/random_joke >> "$GITHUB_ENV"
