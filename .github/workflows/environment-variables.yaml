@@ -25,9 +25,9 @@ jobs:
           DELIMETER = 1234
           echo "RANDOM_JOKE<<$DELIMETER" >> "$GITHUB_ENV"
           echo "Here is the joke: " >> "$GITHUB_ENV"
-          curl -s https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
+          curl -s "Accept: text/plain" https://icanhazdadjoke.com/ >> "$GITHUB_ENV"
           echo "" >> "$GITHUB_ENV"
-          echo "$DELIMETER" >>"$GITHUB_ENV"
+          echo "$DELIMETER" >> "$GITHUB_ENV"
 
       - name: Log custom ENV vars
         env:
