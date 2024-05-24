@@ -4,11 +4,14 @@ on: [push]
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    # timeout-minutes: 1
     steps:
       - name: Step 1
-        run: sleep 20
+        run: sleep 90
+        # timeout-minutes: 1
       - name: step 2
         id: step-2
+        continue-on-error: true
         run: exit 1
       - name: Run on step 2 failure
         if: failure() && steps.step-2.conclusion == 'failure'
