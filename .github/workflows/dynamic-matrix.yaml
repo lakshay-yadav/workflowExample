@@ -31,5 +31,7 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
       - run: node -v
-      - uses: actions/setup@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
       - run: node -v
