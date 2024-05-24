@@ -18,7 +18,7 @@ jobs:
     outputs:
       matrix-arrays: ${{ steps.matrix-arrays.outputs.result}}
     steps:
-      - uses: action/github-script@v6
+      - uses: actions/github-script@v6
         id: matrix-arrays
         with:
           script: "return {os: inputs.os.split(','), node-version: inputs.node-version.split(',')}"
