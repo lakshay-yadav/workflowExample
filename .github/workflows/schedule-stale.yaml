@@ -2,8 +2,9 @@ name: Schedule Stale
 
 on:
   schedule:
-    - cron: "0 7 * * *"
-    - cron: "0/5 * * * *"
+    # mm hh day(month) month day(week)
+    - cron: "0 7 * * *"  # Everyday at 7:00 am
+    - cron: "0/5 * * * *" # Every 5 minutes from the 0th minute.
 
 jobs:
   stale:

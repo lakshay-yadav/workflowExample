@@ -39,3 +39,4 @@ jobs:
           echo "Number: ${{inputs.number_input}}"
           echo "Boolean: ${{inputs.boolean}}"
           echo "Options: ${{inputs.option}}"
+          
